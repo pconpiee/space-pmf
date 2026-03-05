@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PMF Lab — Parallax Earth</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Data layer -->
+  <script src="data/scenarios.js"></script>
+  <script src="data/actions.js"></script>
+
+  <!-- Engine layer -->
+  <script src="engine/state.js"></script>
+  <script src="engine/logic.js"></script>
+
+  <!-- UI layer -->
+  <script src="components/ui-overlays.js"></script>
+  <script src="components/ui-main.js"></script>
+  <script src="components/debrief.js"></script>
+
+  <!-- Boot -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initMainUI();
+    });
+  </script>
+
+</body>
+</html>
