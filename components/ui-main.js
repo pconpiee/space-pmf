@@ -263,7 +263,7 @@ function renderActionCards(filter) {
         </div>
 
         <div class="ac-name">${action.name}</div>
-        <div class="ac-desc">${action.desc}</div>
+        <div class="ac-desc">${action.desc || action.description || ''}</div>
 
         ${action.segmentChoice ? '<div class="ac-segment-badge">🎯 Choose segment</div>' : ''}
         ${action.isPivot ? '<div class="ac-pivot-badge">⚡ Pivot: 14 days + €8K cost</div>' : ''}
