@@ -789,7 +789,7 @@ function openSegmentPickerForPivot() {
   grid.innerHTML = '';
   const segments = G.scenario.segments;
   Object.values(segments).forEach(seg => {
-    if (seg.id === G.activeSegmentId) return; // Can't pivot to current segment
+    if (seg.id === G.activeSegmentId) return;
     const evidenceStrength = computeEvidenceStrength(seg.id);
     const card = document.createElement('div');
     card.className = 'sp-segment-card';
@@ -799,13 +799,12 @@ function openSegmentPickerForPivot() {
       <div class="sp-seg-name">${seg.shortName}</div>
       <div class="sp-evidence-bar" style="width:${evidenceStrength}%"></div>
     `;
-    card.onclick = () => {
+    card.addEventListener('click', function() {
       document.querySelectorAll('.sp-segment-card').forEach(c => c.classList.remove('selected'));
-      card.classList.add('selected');
-    };
+      this.classList.add('selected');
+    });
     grid.appendChild(card);
   });
-
   document.getElementById('sp-action-name').textContent = 'Choose new beachhead segment';
   document.getElementById('sp-confirm-btn').onclick = () => {
     const selected = document.querySelector('.sp-segment-card.selected');
@@ -814,23 +813,18 @@ function openSegmentPickerForPivot() {
   };
   document.getElementById('segment-picker').classList.add('open');
 }
-
 function closeSegmentPicker() {
   document.getElementById('segment-picker').classList.remove('open');
 }
-
 function confirmSegmentAndProceed() {
   const selected = document.querySelector('.sp-segment-card.selected');
   if (!selected) {
-    // Flash the picker — must select something
     document.getElementById('sp-segment-grid').classList.add('flash-locked');
     setTimeout(() => document.getElementById('sp-segment-grid').classList.remove('flash-locked'), 600);
     return;
   }
   confirmSegmentChoice(selected.dataset.segmentId);
 }
-
-
 // ── ENDGAME ────────────────────────────────────────────────
 
 function checkEndgame() {
