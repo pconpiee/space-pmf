@@ -14,7 +14,7 @@ const ACTIONS = [
   // Available: Act I (primary), Act II (diminishing value)
   // Purpose: Generate segment signal — Pain, WTP, Urgency
   // ══════════════════════════════════════════════════════
-
+  
   {
     id: "customer_interview",
     name: "Customer Discovery Interview",
@@ -23,7 +23,8 @@ const ACTIONS = [
     act: [1, 2],
     segment: null,            // Player chooses which segment to interview
     segmentChoice: true,      // Triggers segment selection UI before confirming
-
+repeatable: true,
+    
     cost: { days: 7, budget: 1200 },
     insightGain: 3,
 
@@ -92,6 +93,7 @@ const ACTIONS = [
     act: [1, 2],
     segment: null,
     segmentChoice: true,
+    repeatable: true,
 
     cost: { days: 8, budget: 1400 },
     insightGain: 4,
@@ -287,6 +289,7 @@ const ACTIONS = [
     act: [1, 2],
     segment: null,
     segmentChoice: true,
+    repeatable: true,
 
     cost: { days: 8, budget: 2000 },
     insightGain: 4,
@@ -356,6 +359,7 @@ const ACTIONS = [
     act: [1, 2],
     segment: null,
     segmentChoice: true,
+    repeatable: true,
 
     cost: { days: 6, budget: 1000 },
     insightGain: 4,
@@ -425,6 +429,7 @@ const ACTIONS = [
     act: [1, 2],
     segment: null,
     segmentChoice: true,
+    repeatable: true,
 
     cost: { days: 5, budget: 1800 },
     insightGain: 2,
@@ -981,6 +986,7 @@ const ACTIONS = [
     act: [3],
     segment: null,
     segmentChoice: true,
+    repeatable: true,
 
     cost: { days: 7, budget: 3000 },
     insightGain: 3,
