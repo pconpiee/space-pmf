@@ -757,8 +757,8 @@ function openSegmentPicker(action) {
   const grid = document.getElementById('sp-segment-grid');
   if (!grid) return;
   grid.innerHTML = '';
-  const segments = G.scenario.segments;
-  Object.values(segments).forEach(seg => {
+
+  Object.values(G.scenario.segments).forEach(seg => {
     const evidenceStrength = computeEvidenceStrength(seg.id);
     const revealedCount    = getRevealedSignalCount(seg.id);
     const card = document.createElement('div');
@@ -769,17 +769,18 @@ function openSegmentPicker(action) {
       <div class="sp-seg-name">${seg.shortName}</div>
       <div class="sp-seg-evidence">
         <div class="sp-evidence-bar" style="width:${evidenceStrength}%"></div>
-        <span class="sp-evidence-label">${revealedCount}/3 signals revealed</span>
+        <span class="sp-evidence-label">${revealedCount}/3 signals</span>
       </div>
     `;
-    card.onclick = () => {
+    card.addEventListener('click', function() {
       document.querySelectorAll('.sp-segment-card').forEach(c => c.classList.remove('selected'));
-      card.classList.add('selected');
-    };
+      this.classList.add('selected');
+    });
     grid.appendChild(card);
   });
 
   document.getElementById('sp-action-name').textContent = action.name;
+  document.getElementById('sp-confirm-btn').onclick = confirmSegmentAndProceed;
   document.getElementById('segment-picker').classList.add('open');
 }
 
