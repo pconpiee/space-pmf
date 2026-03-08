@@ -132,9 +132,23 @@ function closeCardPrompt() {
 }
 
 function confirmCardWritten() {
-  // Student has written on their physical card. Execute the action.
   closeCardPrompt();
   if (G.pendingAction) {
+    // Save hypothesis to history
+    const input = document.getElementById('cp-hypothesis-input');
+    const hypothesis = input ? input.value.trim() : '';
+    if (hypothesis) {
+      G.hypotheses = G.hypotheses || [];
+      G.hypotheses.push({
+        actionId:    G.pendingAction.id,
+        actionName:  G.pendingAction.name,
+        segmentId:   G.pendingSegmentId,
+        hypothesis,
+        day:         G.day,
+        act:         getCurrentAct(),
+      });
+    }
+    if (input) input.value = '';
     executeAction(G.pendingAction, G.pendingSegmentId);
   }
 }
