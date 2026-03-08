@@ -437,7 +437,7 @@ function populateDebriefQuestions() {
 
   const questions = G.scenario.debriefQuestions || [];
 
-  container.innerHTML = `
+container.innerHTML = `
     <div class="dq-header">
       <span class="dq-title">Facilitator Debrief Questions</span>
       <span class="dq-subtitle">Ask these in order. Give each group 2–3 minutes.</span>
@@ -459,6 +459,26 @@ function populateDebriefQuestions() {
         What is different now?
       </div>
     </div>
+
+    ${G.hypotheses && G.hypotheses.length > 0 ? `
+      <div class="dq-hypotheses">
+        <div class="dq-hyp-label">Hypotheses you recorded</div>
+        ${G.hypotheses.map((h, i) => `
+          <div class="dq-hyp-item">
+            <div class="dq-hyp-header">
+              <span class="dq-hyp-num">${i + 1}</span>
+              <span class="dq-hyp-action">${h.actionName}</span>
+              ${h.segmentId && G.scenario.segments[h.segmentId]
+                ? `<span class="dq-hyp-seg">${G.scenario.segments[h.segmentId].icon} ${G.scenario.segments[h.segmentId].shortName}</span>`
+                : ''}
+              <span class="dq-hyp-meta">Day ${h.day} · Act ${h.act}</span>
+            </div>
+            <div class="dq-hyp-text">"${h.hypothesis}"</div>
+          </div>
+        `).join('')}
+      </div>
+    ` : ''}
+
   `;
 }
 
@@ -547,6 +567,62 @@ function injectDebriefCSS() {
   const style = document.createElement('style');
   style.id = 'debrief-styles';
   style.textContent = `
+  .dq-hypotheses {
+  margin-top:    1.5rem;
+  padding-top:   1.2rem;
+  border-top:    1px solid rgba(255,255,255,0.07);
+}
+.dq-hyp-label {
+  font-size:      0.62rem;
+  font-family:    'IBM Plex Mono', monospace;
+  letter-spacing: 0.12em;
+  color:          #0D6B6B;
+  text-transform: uppercase;
+  margin-bottom:  0.75rem;
+}
+.dq-hyp-item {
+  margin-bottom:  0.75rem;
+  padding:        0.75rem 0.9rem;
+  background:     rgba(255,255,255,0.02);
+  border:         1px solid rgba(255,255,255,0.07);
+  border-radius:  7px;
+}
+.dq-hyp-header {
+  display:        flex;
+  align-items:    center;
+  gap:            0.5rem;
+  margin-bottom:  0.4rem;
+  flex-wrap:      wrap;
+}
+.dq-hyp-num {
+  font-size:   0.65rem;
+  font-family: 'IBM Plex Mono', monospace;
+  color:       #2A3A4A;
+  min-width:   16px;
+}
+.dq-hyp-action {
+  font-size:   0.75rem;
+  font-weight: 600;
+  color:       #C8D8E8;
+}
+.dq-hyp-seg {
+  font-size:   0.68rem;
+  font-family: 'IBM Plex Mono', monospace;
+  color:       #0D9B9B;
+}
+.dq-hyp-meta {
+  font-size:   0.62rem;
+  font-family: 'IBM Plex Mono', monospace;
+  color:       #3A5A7A;
+  margin-left: auto;
+}
+.dq-hyp-text {
+  font-size:   0.82rem;
+  font-family: 'Georgia', serif;
+  color:       #9BB0C8;
+  line-height: 1.55;
+  font-style:  italic;
+}
 
     /* ── DEBRIEF SCREEN ──────────────────────────────── */
     .debrief-screen {
