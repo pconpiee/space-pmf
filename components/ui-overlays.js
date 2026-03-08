@@ -25,38 +25,40 @@ function injectOverlayHTML() {
          physical card before clicking "Written — Proceed".
     ═══════════════════════════════════════════════════ -->
     <div id="card-prompt" class="overlay-backdrop">
-      <div class="overlay-panel cp-panel">
+  <div class="overlay-panel cp-panel">
 
-        <div class="cp-eyebrow">✏️ Write on your card before proceeding</div>
+    <div class="cp-eyebrow">✏️ Record your hypothesis</div>
 
-        <div class="cp-action-header">
-          <span id="cp-action-name" class="cp-action-name"></span>
-          <span id="cp-cost" class="cp-cost-pill"></span>
-        </div>
-
-        <div class="cp-divider"></div>
-
-        <div class="cp-question-block">
-          <div class="cp-question-label">WRITE THIS ON YOUR CARD</div>
-          <div id="cp-question" class="cp-question-text"></div>
-        </div>
-
-        <div id="cp-hint" class="cp-hint"></div>
-
-        <div class="cp-instruction">
-          Write your answer on the physical card.
-          Do not proceed until you have written it down.
-        </div>
-
-        <div class="cp-actions">
-          <button class="btn-secondary" onclick="cancelAction()">← Cancel</button>
-          <button class="btn-primary btn-confirm" onclick="confirmCardWritten()">
-            Written — Proceed ✓
-          </button>
-        </div>
-
-      </div>
+    <div class="cp-action-header">
+      <span id="cp-action-name" class="cp-action-name"></span>
+      <span id="cp-cost" class="cp-cost-pill"></span>
     </div>
+
+    <div class="cp-divider"></div>
+
+    <div class="cp-question-block">
+      <div class="cp-question-label">YOUR HYPOTHESIS</div>
+      <div id="cp-question" class="cp-question-text"></div>
+    </div>
+
+    <div id="cp-hint" class="cp-hint"></div>
+
+    <textarea
+      id="cp-hypothesis-input"
+      class="cp-textarea"
+      placeholder="Type your hypothesis here before proceeding..."
+      rows="3"
+    ></textarea>
+
+    <div class="cp-actions">
+      <button class="btn-secondary" onclick="cancelAction()">← Cancel</button>
+      <button class="btn-primary btn-confirm" onclick="confirmCardWritten()">
+        Confirm & Proceed ✓
+      </button>
+    </div>
+
+  </div>
+</div>
 
 
     <!-- ═══════════════════════════════════════════════════
