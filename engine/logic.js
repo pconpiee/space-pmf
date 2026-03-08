@@ -64,14 +64,6 @@ function validateAction(action) {
     };
   }
 
-  // Segment choice required but not yet made
-  if (action.segmentChoice && !G.pendingSegmentId) {
-    return {
-      allowed: false,
-      reason: 'Select a target segment before confirming this action.'
-    };
-  }
-
   return { allowed: true, reason: null };
 }
 
@@ -357,6 +349,11 @@ function computeModifier(action, segmentId) {
 
 function executeAction(action, segmentId) {
   // Final validation (belt-and-suspenders — UI should have checked already)
+   if (action.segmentChoice && !segmentId) {
+    logActivity('warn', 'No segment selected.');
+    return;
+  }
+  
   const validation = validateAction(action);
   if (!validation.allowed) {
     logActivity('warn', `Action blocked: ${validation.reason}`);
