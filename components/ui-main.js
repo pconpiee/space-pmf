@@ -593,7 +593,22 @@ function injectMainCSS() {
       height:     100%;
       background: rgba(255,255,255,0.2);
     }
-
+.tb-end-btn {
+  background:    transparent;
+  border:        1px solid rgba(139,37,0,0.4);
+  color:         #C04A1A;
+  font-size:     0.72rem;
+  font-family:   'IBM Plex Mono', monospace;
+  padding:       0.3rem 0.75rem;
+  border-radius: 20px;
+  cursor:        pointer;
+  margin-left:   1rem;
+  transition:    all 0.15s;
+}
+.tb-end-btn:hover {
+  background:  rgba(139,37,0,0.15);
+  border-color: #C04A1A;
+}
 
     /* ── SEGMENT PANEL ────────────────────────────────── */
     #segment-panel {
