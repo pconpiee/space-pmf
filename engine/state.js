@@ -35,6 +35,7 @@ let G = {
   pendingAction:    null,
   pendingSegmentId: null,
   activityLog:      [],
+  hypotheses:       [],
   scenario:         null,
   activeFilter:     'all',
 };
@@ -77,6 +78,7 @@ function resetState(scenario) {
   G.pendingAction    = null;
   G.pendingSegmentId = null;
   G.activityLog      = [];
+  G.hypotheses       = [];
   G.activeFilter     = 'all';
 }
 
