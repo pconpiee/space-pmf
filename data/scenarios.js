@@ -28,15 +28,16 @@ const SEGMENTS = {
 
     // What research actions reveal about this segment (partial truth)
     // Keys match action IDs in actions.js
+
     signalProfile: {
-      customer_interview:    { pain: 70, wtp: null, urgency: 38 },  // Pain clear, WTP hidden
-      pricing_experiment:    { pain: null, wtp: 82, urgency: null }, // WTP revealed
-      jtbd_interview:        { pain: 75, wtp: null, urgency: 44 },  // Urgency pattern clearer
-      competitive_analysis:  { pain: null, wtp: null, urgency: 40 },// Urgency context
-      dmu_mapping:           { pain: null, wtp: 80, urgency: null }, // WTP + buyer clarity
-      smoke_test:            { pain: null, wtp: 78, urgency: 50 },  // WTP + urgency spike
-      landing_page:          { pain: 65, wtp: null, urgency: 35 },  // Moderate surface signal
-    },
+  customer_discovery_interview: { pain: 70, wtp: null,  urgency: 38 },
+  jtbd_interview:               { pain: 75, wtp: null,  urgency: 44 },
+  pricing_experiment:           { pain: null, wtp: 82,  urgency: null },
+  competitive_analysis:         { pain: null, wtp: null, urgency: 40 },
+  dmu_mapping:                  { pain: null, wtp: 80,  urgency: null },
+  smoke_test:                   { pain: null, wtp: 78,  urgency: 50 },
+  landing_page_test:            { pain: 65,  wtp: null, urgency: 35 }, 
+},
 
     // Debrief context — shown in results screen
     debrief: {
@@ -61,14 +62,14 @@ const SEGMENTS = {
     dmrComplexity: 82,  // Very high — multiple approval layers
 
     signalProfile: {
-      customer_interview:    { pain: 60, wtp: null, urgency: 30 },  // Low access = weak signal
-      pricing_experiment:    { pain: null, wtp: 88, urgency: null },
-      jtbd_interview:        { pain: 68, wtp: null, urgency: 35 },
-      competitive_analysis:  { pain: null, wtp: null, urgency: 32 },
-      dmu_mapping:           { pain: null, wtp: 90, urgency: null }, // DMU reveals huge WTP
-      smoke_test:            { pain: null, wtp: 70, urgency: 28 },  // Hard to reach for smoke test
-      landing_page:          { pain: 45, wtp: null, urgency: 25 },  // Low signal — wrong channel
-    },
+  customer_discovery_interview: { pain: 60, wtp: null,  urgency: 30 },
+  jtbd_interview:               { pain: 68, wtp: null,  urgency: 35 },
+  pricing_experiment:           { pain: null, wtp: 88,  urgency: null },
+  competitive_analysis:         { pain: null, wtp: null, urgency: 32 },
+  dmu_mapping:                  { pain: null, wtp: 90,  urgency: null },
+  smoke_test:                   { pain: null, wtp: 70,  urgency: 28 },
+  landing_page_test:            { pain: 45,  wtp: null, urgency: 25 },
+},
 
     debrief: {
       strength: "Highest WTP of any segment by a significant margin. One deal funds 18 months of runway.",
@@ -91,15 +92,15 @@ const SEGMENTS = {
     salesCycle: 72,     // Long — government procurement friction
     dmrComplexity: 68,  // Medium-high — multiple approvers
 
-    signalProfile: {
-      customer_interview:    { pain: 72, wtp: null, urgency: 78 },  // Urgency very clear
-      pricing_experiment:    { pain: null, wtp: 62, urgency: null }, // WTP lower than expected
-      jtbd_interview:        { pain: 70, wtp: null, urgency: 80 },
-      competitive_analysis:  { pain: null, wtp: null, urgency: 85 }, // Deadline very visible
-      dmu_mapping:           { pain: null, wtp: 65, urgency: null }, // Procurement friction revealed
-      smoke_test:            { pain: null, wtp: 58, urgency: 75 },
-      landing_page:          { pain: 68, wtp: null, urgency: 76 },  // Good signal — they're searching
-    },
+   signalProfile: {
+  customer_discovery_interview: { pain: 72, wtp: null,  urgency: 78 },
+  jtbd_interview:               { pain: 70, wtp: null,  urgency: 80 },
+  pricing_experiment:           { pain: null, wtp: 62,  urgency: null },
+  competitive_analysis:         { pain: null, wtp: null, urgency: 85 },
+  dmu_mapping:                  { pain: null, wtp: 65,  urgency: null },
+  smoke_test:                   { pain: null, wtp: 58,  urgency: 75 },
+  landing_page_test:            { pain: 68,  wtp: null, urgency: 76 },
+},
 
     debrief: {
       strength: "Clearest urgency signal of any segment. Regulatory deadlines create forced buying events. Easy to find via landing pages — they're already searching.",
@@ -122,15 +123,15 @@ const SEGMENTS = {
     salesCycle: 48,     // Faster — commercial procurement
     dmrComplexity: 44,  // Simpler — operations director can often decide
 
-    signalProfile: {
-      customer_interview:    { pain: 55, wtp: null, urgency: 52 },
-      pricing_experiment:    { pain: null, wtp: 58, urgency: null },
-      jtbd_interview:        { pain: 60, wtp: null, urgency: 55 },  // Reveals AIS alternative clearly
-      competitive_analysis:  { pain: null, wtp: null, urgency: 50 },// Competitor landscape clear
-      dmu_mapping:           { pain: null, wtp: 60, urgency: null },
-      smoke_test:            { pain: null, wtp: 55, urgency: 48 },
-      landing_page:          { pain: 52, wtp: null, urgency: 50 },
-    },
+  signalProfile: {
+  customer_discovery_interview: { pain: 55, wtp: null,  urgency: 52 },
+  jtbd_interview:               { pain: 60, wtp: null,  urgency: 55 },
+  pricing_experiment:           { pain: null, wtp: 58,  urgency: null },
+  competitive_analysis:         { pain: null, wtp: null, urgency: 50 },
+  dmu_mapping:                  { pain: null, wtp: 60,  urgency: null },
+  smoke_test:                   { pain: null, wtp: 55,  urgency: 48 },
+  landing_page_test:            { pain: 52,  wtp: null, urgency: 50 },
+},
 
     debrief: {
       strength: "Fastest sales cycle, simplest DMU, most accessible for early discovery. Good for building early revenue and learning commercial GTM.",
