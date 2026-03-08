@@ -842,6 +842,17 @@ function confirmSegmentAndProceed() {
   }
   confirmSegmentChoice(selected.dataset.segmentId);
 }
+
+// ── FORCE ENDGAME ────────────────────────────────────────────────
+
+function forceEndGame() {
+  if (G.isOver) { showDebrief(); return; }
+  G.isOver = true;
+  G.failureMode = null; // not a failure — voluntary end
+  snapshotAct(getCurrentAct());
+  showDebrief();
+}
+
 // ── ENDGAME ────────────────────────────────────────────────
 
 function checkEndgame() {
@@ -934,6 +945,7 @@ if (typeof module !== 'undefined' && module.exports) {
     replayScenario,
     startGame,
     initSplash,
+    forceEndGame,
   };
 } else {
   window.validateAction          = validateAction;
@@ -958,4 +970,8 @@ if (typeof module !== 'undefined' && module.exports) {
   window.replayScenario          = replayScenario;
   window.startGame               = startGame;
   window.initSplash              = initSplash;
+  window.forceEndGame           = forceEndGame;
+
 }
+
+
