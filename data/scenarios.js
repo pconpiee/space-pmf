@@ -30,13 +30,13 @@ const SEGMENTS = {
     // Keys match action IDs in actions.js
 
     signalProfile: {
-  customer_discovery_interview: { pain: 70, wtp: null,  urgency: 38 },
-  jtbd_interview:               { pain: 75, wtp: null,  urgency: 44 },
-  pricing_experiment:           { pain: null, wtp: 82,  urgency: null },
-  competitive_analysis:         { pain: null, wtp: null, urgency: 40 },
-  dmu_mapping:                  { pain: null, wtp: 80,  urgency: null },
-  smoke_test:                   { pain: null, wtp: 78,  urgency: 50 },
-  landing_page_test:            { pain: 65,  wtp: null, urgency: 35 }, 
+  customer_interview:   { pain: 70, wtp: null, urgency: 38 },
+  jtbd_interview:       { pain: 75, wtp: null, urgency: 44 },
+  pricing_experiment:   { pain: null, wtp: 82, urgency: null },
+  competitive_analysis: { pain: null, wtp: null, urgency: 40 },
+  dmu_mapping:          { pain: null, wtp: 80, urgency: null },
+  smoke_test:           { pain: null, wtp: 78, urgency: 50 },
+  landing_page:         { pain: 65, wtp: null, urgency: 35 },
 },
 
     // Debrief context — shown in results screen
@@ -61,14 +61,14 @@ const SEGMENTS = {
     salesCycle: 88,     // Very long — 18+ month procurement cycles
     dmrComplexity: 82,  // Very high — multiple approval layers
 
-    signalProfile: {
-  customer_discovery_interview: { pain: 60, wtp: null,  urgency: 30 },
-  jtbd_interview:               { pain: 68, wtp: null,  urgency: 35 },
-  pricing_experiment:           { pain: null, wtp: 88,  urgency: null },
-  competitive_analysis:         { pain: null, wtp: null, urgency: 32 },
-  dmu_mapping:                  { pain: null, wtp: 90,  urgency: null },
-  smoke_test:                   { pain: null, wtp: 70,  urgency: 28 },
-  landing_page_test:            { pain: 45,  wtp: null, urgency: 25 },
+  signalProfile: {
+  customer_interview:   { pain: 60, wtp: null, urgency: 30 },
+  jtbd_interview:       { pain: 68, wtp: null, urgency: 35 },
+  pricing_experiment:   { pain: null, wtp: 88, urgency: null },
+  competitive_analysis: { pain: null, wtp: null, urgency: 32 },
+  dmu_mapping:          { pain: null, wtp: 90, urgency: null },
+  smoke_test:           { pain: null, wtp: 70, urgency: 28 },
+  landing_page:         { pain: 45, wtp: null, urgency: 25 },
 },
 
     debrief: {
@@ -92,14 +92,14 @@ const SEGMENTS = {
     salesCycle: 72,     // Long — government procurement friction
     dmrComplexity: 68,  // Medium-high — multiple approvers
 
-   signalProfile: {
-  customer_discovery_interview: { pain: 72, wtp: null,  urgency: 78 },
-  jtbd_interview:               { pain: 70, wtp: null,  urgency: 80 },
-  pricing_experiment:           { pain: null, wtp: 62,  urgency: null },
-  competitive_analysis:         { pain: null, wtp: null, urgency: 85 },
-  dmu_mapping:                  { pain: null, wtp: 65,  urgency: null },
-  smoke_test:                   { pain: null, wtp: 58,  urgency: 75 },
-  landing_page_test:            { pain: 68,  wtp: null, urgency: 76 },
+ signalProfile: {
+  customer_interview:   { pain: 72, wtp: null, urgency: 78 },
+  jtbd_interview:       { pain: 70, wtp: null, urgency: 80 },
+  pricing_experiment:   { pain: null, wtp: 62, urgency: null },
+  competitive_analysis: { pain: null, wtp: null, urgency: 85 },
+  dmu_mapping:          { pain: null, wtp: 65, urgency: null },
+  smoke_test:           { pain: null, wtp: 58, urgency: 75 },
+  landing_page:         { pain: 68, wtp: null, urgency: 76 },
 },
 
     debrief: {
@@ -123,14 +123,14 @@ const SEGMENTS = {
     salesCycle: 48,     // Faster — commercial procurement
     dmrComplexity: 44,  // Simpler — operations director can often decide
 
-  signalProfile: {
-  customer_discovery_interview: { pain: 55, wtp: null,  urgency: 52 },
-  jtbd_interview:               { pain: 60, wtp: null,  urgency: 55 },
-  pricing_experiment:           { pain: null, wtp: 58,  urgency: null },
-  competitive_analysis:         { pain: null, wtp: null, urgency: 50 },
-  dmu_mapping:                  { pain: null, wtp: 60,  urgency: null },
-  smoke_test:                   { pain: null, wtp: 55,  urgency: 48 },
-  landing_page_test:            { pain: 52,  wtp: null, urgency: 50 },
+ signalProfile: {
+  customer_interview:   { pain: 55, wtp: null, urgency: 52 },
+  jtbd_interview:       { pain: 60, wtp: null, urgency: 55 },
+  pricing_experiment:   { pain: null, wtp: 58, urgency: null },
+  competitive_analysis: { pain: null, wtp: null, urgency: 50 },
+  dmu_mapping:          { pain: null, wtp: 60, urgency: null },
+  smoke_test:           { pain: null, wtp: 55, urgency: 48 },
+  landing_page:         { pain: 52, wtp: null, urgency: 50 },
 },
 
     debrief: {
