@@ -258,6 +258,26 @@ function injectOverlayCSS() {
   const style = document.createElement('style');
   style.textContent = `
 
+    /* ── DIGITAL HYPOTHESIS CAPTURE ─────────────────────── */
+.cp-textarea {
+  width:         100%;
+  background:    rgba(255,255,255,0.04);
+  border:        1px solid rgba(13,107,107,0.35);
+  border-radius: 6px;
+  color:         #E8EEF5;
+  font-size:     0.88rem;
+  font-family:   'Inter', sans-serif;
+  padding:       0.75rem 0.9rem;
+  resize:        vertical;
+  margin-bottom: 1.2rem;
+  outline:       none;
+  line-height:   1.5;
+}
+.cp-textarea:focus {
+  border-color: #0D6B6B;
+  background:   rgba(13,107,107,0.07);
+}
+
     /* ── SHARED OVERLAY BACKDROP ─────────────────────── */
     .overlay-backdrop {
       display:         none;
