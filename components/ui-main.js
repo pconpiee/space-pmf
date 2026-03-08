@@ -70,6 +70,7 @@ function renderTopBar() {
           <span class="tb-metric-val">${fmtBudget(actDef.dailyBurn)}/day</span>
         </div>
       </div>
+      <button class="tb-end-btn" onclick="forceEndGame()">End →</button>
 
     </div>
 
@@ -402,6 +403,20 @@ function renderSplash() {
 // Single entry point. Logic.js calls this after every action.
 
 function renderAll() {
+  // Check if player is stuck — all actions unaffordable or out of time
+  if (!G.isOver && G.scenario) {
+    const stuck = !ACTIONS.some(a => {
+      const s = getActionCardState(a);
+      return s.state === 'available';
+    });
+    if (stuck) {
+      G.isOver = true;
+      G.failureMode = G.budget <= 0 ? 'runway' : 'time';
+      snapshotAct(getCurrentAct());
+      setTimeout(showDebrief, 800);
+      return;
+    }
+  }
   renderTopBar();
   renderSegmentPanel();
   renderActionGrid();
