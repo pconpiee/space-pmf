@@ -540,10 +540,15 @@ function confirmActGate() {
   const act = getCurrentAct();
   if (act === 1) {
     completeActI();
-    logActivity('learn', 'Act I complete. PMF thesis written on card. Act II — Build & Validate — now unlocked.');
+    // Auto-set beachhead to most evidenced segment if not already set
+    if (!G.activeSegmentId) {
+      const best = getMostEvidencedSegment();
+      if (best) setActiveSegment(best);
+    }
+    logActivity('learn', `Act I complete. Beachhead set: ${G.activeSegmentId ? G.scenario.segments[G.activeSegmentId].name : 'none'}. Act II unlocked.`);
   } else if (act === 2) {
     completeActII();
-    logActivity('learn', 'Act II complete. Scaling thesis written. Act III — Scale or Die — now unlocked.');
+    logActivity('learn', 'Act II complete. Act III — Scale or Die — now unlocked.');
   }
   renderAll();
 }
